@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pymongo
+python-dotenv
+weaviate-client
+langchain
+langchain-community
+pypdf
+tiktoken
+langchain-groq
+sentence-transformers
+langchain-huggingface
+##pip install -r requirements.txt

@@ -10,7 +10,7 @@ The agent:
 🚧 **Current Status:** Backend completed  
 🚀 **Future Scope:** WhatsApp UI + Chat API integration
 
----
+
 
 ## 📌 Problem Statement
 
@@ -29,25 +29,33 @@ Build an intelligent **Swiggy WhatsApp Agent** that:
 - Applies business rules for offers
 - Uses AI to answer offer-related questions
 
----
+
 
 ## 🧠 System Architecture (Backend)
 
 Client (WhatsApp UI - Future)
+
         |
         v
 FastAPI Backend
+
         |
         ├── Offer Agent
+        
         │       ├── MongoDB (Customers Collection)
+        
         │       └── MongoDB (Orders Collection)
+        
         |
         ├── Customer Support Agent (RAG)
+        
         │       └── Weaviate (Offer PDF embeddings)
+        
         |
         └── LLM (Groq / Gemini)
+        
 
----
+
 
 ## ⚙️ Backend Flow
 
@@ -58,7 +66,7 @@ FastAPI Backend
 5. Offer eligibility decided  
 6. Offer questions answered using RAG
 
----
+
 
 ## 🧩 Agents Overview
 
@@ -75,7 +83,7 @@ FastAPI Backend
 - Mobile number → Offer Agent
 - Text query → Customer Support Agent
 
----
+
 
 ## 🗄️ Database Design
 
@@ -91,13 +99,13 @@ Orders:
   "order_id": "ORD123"
 }
 
----
+
 
 ## 📄 RAG Data Source
 
 OfferData/swiggy_customer_offers_rag_training.pdf
 
----
+
 
 ## 🛠️ Tech Stack
 
@@ -113,7 +121,7 @@ Frontend (Future):
 - ReactJS
 - WhatsApp-style chat UI
 
----
+
 
 ## 🚀 Running the Backend
 
@@ -123,7 +131,7 @@ Frontend (Future):
 4. Embed offer PDF
 5. Run FastAPI server
 
----
+
 
 ## 🎯 Future Enhancements
 
@@ -132,7 +140,7 @@ Frontend (Future):
 - Analytics dashboard
 - Admin offer management
 
----
+
 
 ## 👩‍💻 Author
 

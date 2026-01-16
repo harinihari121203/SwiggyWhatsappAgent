@@ -7,9 +7,6 @@ The agent:
 - Answers offer-related questions using **RAG (Retrieval Augmented Generation)**
 - Routes user messages to the correct AI agent based on intent
 
-🚧 **Current Status:** Fullstack Agent (Backend + Frontend) completed  
-🚀 **Live Demo:** Chat UI ready for interaction
-
 
 
 ## 📌 Problem Statement
@@ -29,21 +26,6 @@ Build an intelligent **Swiggy WhatsApp Agent** that:
 - Applies business rules for offers
 - Uses AI to answer offer-related questions
 
-
-
-## 🧠 System Architecture
-
-```mermaid
-graph TD
-    Client["WhatsApp-style UI (Frontend)"] -->|POST /chat| FastAPI["FastAPI Backend"]
-    FastAPI -->|Intents| Router["Intent Router"]
-    Router -->|Verification| OfferAgent["Offer Agent"]
-    Router -->|Query| SupportAgent["Customer Support Agent (RAG)"]
-    OfferAgent --> MongoDB[("MongoDB Atlas")]
-    SupportAgent --> Weaviate[("Weaviate Cloud")]
-    SupportAgent --> LLM["LLM (Groq / Gemini)"]
-```
-        
 
 
 
@@ -75,18 +57,7 @@ graph TD
 
 ---
 
-## � Frontend Features
-
-The project now includes a modern, responsive **WhatsApp-style Chat UI** built with vanilla web technologies.
-
-- **Theme Toggle:** Switch between Light and Dark modes.
-- **View Modes:** Toggle between Desktop and Mobile phone mockups.
-- **Real-time Chat:** Seamless communication with the FastAPI backend.
-- **Responsive Design:** Optimized for various screen sizes.
-
-
-
-## �🗄️ Database Design
+## 🗄️ Database Design
 
 Customers:
 {
@@ -136,14 +107,6 @@ Frontend:
 2. Open `index.html` in your browser.
 3. Ensure the backend is running at `http://127.0.0.1:8000`.
 
-
-
-## 🎯 Future Enhancements
-
-- Real WhatsApp Business API integration
-- Chat history persistence
-- Analytics dashboard for offer performance
-- Admin portal for offer management
 
 
 

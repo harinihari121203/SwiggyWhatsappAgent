@@ -13,8 +13,7 @@ class OfferAgent:
 
         if not customer:
             return {
-                "status": "NOT_REGISTERED",
-                "message": (
+                "response": (
                     "❌ You are not registered with us.\n"
                     "Please sign up and place orders to avail exciting offers.\n"
                     "Happy shopping 🛍️"
@@ -25,20 +24,16 @@ class OfferAgent:
 
         if total_orders > 2:
             return {
-                "status": "ELIGIBLE",
-                "message": (
+                "response": (
                     f"🎉 Congratulations!\n"
                     f"You are eligible for the special offer.\n"
                     f"Total orders placed: {total_orders}"
-                ),
-                "eligible": True
+                )
             }
 
         return {
-            "status": "NOT_ELIGIBLE",
-            "message": (
+            "response": (
                 f"🙂 You have placed {total_orders} orders.\n"
                 "Place more than 2 orders to unlock exciting offers!"
-            ),
-            "eligible": False
+            )
         }

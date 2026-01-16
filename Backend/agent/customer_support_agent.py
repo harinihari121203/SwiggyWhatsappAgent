@@ -40,7 +40,7 @@ class CustomerSupportAgent:
         prompt = f"""
         You are a Swiggy customer support assistant.
         Answer ONLY using the context below.
-
+        If the user asks if they are eligible for offer ask them to enter their 10 digit phone number to verify with their order history.
         Context:
         {context}
 

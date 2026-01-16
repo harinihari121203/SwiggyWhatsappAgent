@@ -1,4 +1,4 @@
-# 🍔 Swiggy WhatsApp Agent (Backend)
+# 🍔 Swiggy WhatsApp Agent
 
 An AI-powered backend system that simulates a **WhatsApp-style customer support agent for Swiggy-like offers**.
 
@@ -7,8 +7,8 @@ The agent:
 - Answers offer-related questions using **RAG (Retrieval Augmented Generation)**
 - Routes user messages to the correct AI agent based on intent
 
-🚧 **Current Status:** Backend completed  
-🚀 **Future Scope:** WhatsApp UI + Chat API integration
+🚧 **Current Status:** Fullstack Agent (Backend + Frontend) completed  
+🚀 **Live Demo:** Chat UI ready for interaction
 
 
 
@@ -31,28 +31,18 @@ Build an intelligent **Swiggy WhatsApp Agent** that:
 
 
 
-## 🧠 System Architecture (Backend)
+## 🧠 System Architecture
 
-Client (WhatsApp UI - Future)
-
-        |
-        v
-FastAPI Backend
-
-        |
-        ├── Offer Agent
-        
-        │       ├── MongoDB (Customers Collection)
-        
-        │       └── MongoDB (Orders Collection)
-        
-        |
-        ├── Customer Support Agent (RAG)
-        
-        │       └── Weaviate (Offer PDF embeddings)
-        
-        |
-        └── LLM (Groq / Gemini)
+```mermaid
+graph TD
+    Client["WhatsApp-style UI (Frontend)"] -->|POST /chat| FastAPI["FastAPI Backend"]
+    FastAPI -->|Intents| Router["Intent Router"]
+    Router -->|Verification| OfferAgent["Offer Agent"]
+    Router -->|Query| SupportAgent["Customer Support Agent (RAG)"]
+    OfferAgent --> MongoDB[("MongoDB Atlas")]
+    SupportAgent --> Weaviate[("Weaviate Cloud")]
+    SupportAgent --> LLM["LLM (Groq / Gemini)"]
+```
         
 
 
@@ -83,9 +73,20 @@ FastAPI Backend
 - Mobile number → Offer Agent
 - Text query → Customer Support Agent
 
+---
+
+## � Frontend Features
+
+The project now includes a modern, responsive **WhatsApp-style Chat UI** built with vanilla web technologies.
+
+- **Theme Toggle:** Switch between Light and Dark modes.
+- **View Modes:** Toggle between Desktop and Mobile phone mockups.
+- **Real-time Chat:** Seamless communication with the FastAPI backend.
+- **Responsive Design:** Optimized for various screen sizes.
 
 
-## 🗄️ Database Design
+
+## �🗄️ Database Design
 
 Customers:
 {
@@ -110,35 +111,39 @@ OfferData/swiggy_customer_offers_rag_training.pdf
 ## 🛠️ Tech Stack
 
 Backend:
-- Python
-- FastAPI
+- Python, FastAPI
 - LangChain
 - MongoDB Atlas
 - Weaviate Cloud
 - Groq / Gemini
 
-Frontend (Future):
-- ReactJS
-- WhatsApp-style chat UI
+Frontend:
+- HTML5, CSS3 (Vanilla)
+- JavaScript (Fetch API)
+- FontAwesome Icons
 
 
 
-## 🚀 Running the Backend
-
+### 🏃‍♂️ Running the Backend
 1. Create virtual environment
 2. Install requirements
 3. Set environment variables
 4. Embed offer PDF
-5. Run FastAPI server
+5. Run FastAPI server: `uvicorn main:app --reload`
+
+### 🎨 Running the Frontend
+1. Navigate to the `Frontend` folder.
+2. Open `index.html` in your browser.
+3. Ensure the backend is running at `http://127.0.0.1:8000`.
 
 
 
 ## 🎯 Future Enhancements
 
-- WhatsApp integration
-- Chat API webhook
-- Analytics dashboard
-- Admin offer management
+- Real WhatsApp Business API integration
+- Chat history persistence
+- Analytics dashboard for offer performance
+- Admin portal for offer management
 
 
 
